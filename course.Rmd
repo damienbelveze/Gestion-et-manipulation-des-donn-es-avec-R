@@ -1,0 +1,45 @@
+---
+title: "Data Wrangling and Management in R"
+author: "Damien Belvèze"
+date: "2024-08-28"
+output:
+  html_document:
+    toc: true
+    theme: united
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+# Pré-requis
+
+Cette leçon comporte quelques pré-requis sur votre compréhension de R. Si vous n'avez pas été achevé les [bases de R avec des données tabulées](https://programminghistorian.org/lessons/r-basics-with-tabular-data), je vous suggère de le faire d'abord. Avoir une expérience dans un autre langage de programmation sera un plus. Si vous souhaitez savoir par où débuter, je vous recommande de parcourir les excellents tutoriels de *Programming Historian* sur Python
+
+# Objectifs de la leçon
+
+A la fin de cette leçon, vous serez en mesure de :
+
+  1. comprendre comment organiser vos données pour qu'elles soient *ordonnées* et pourquoi c'est important. 
+  2. comprendre le paquet dplyr et l'utiliser pour manipuler et administrer les données.
+  3. Se familiariser avec l'opérateur pipe dans R et observer comment il eput vous aider à créer du code plus lisible.
+  4. Apprendre à travailler sur des exemples de base de manipulation de données pour acquérir les fondements de l'analyse exploratoire des données.
+
+# Introduction
+
+Les données que vous trouverez "dans la nature" sont rarement dans un format qui rend possible une analyse et vous aurez à les manipuler avant d'explorer les questions que vous souhaitez leur poser. Cette manipulation peut prendre plus de temps que l'analyse elle-même ! Dans ce tutoriel, nous apprendrons quelques techniques de base for manipuler, gérer et administrer nos données dans R. Notamment, nous nous fonderons sur la philosophie des ["données propres"](https://www.jstatsoft.org/article/view/v059i10)(*tidy data*) telle que l'a présentée Hadley Wickham.
+
+```{r echo=TRUE, include=FALSE}
+
+# Install tidyverse libraries and load it
+# Do not worry if this takes a while
+
+install.packages("tidyverse", repos = "http://cran.us.r-project.org")
+library(tidyverse)
+```
+
+
+# Un example du fonctionnement de dplyr

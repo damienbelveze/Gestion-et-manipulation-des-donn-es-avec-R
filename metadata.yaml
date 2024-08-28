@@ -1,0 +1,28 @@
+title: "Manipulation de données avec R"
+collection: lessons
+layout: lesson
+slug: manipulation_donnees_avec_R
+date: "2017-07-31"     
+translation_date: "2023-08-24"
+authors:
+- Ian Milligan
+reviewers:
+- Lauren Tilton
+- Ryan Deschamps
+translator:
+- Damien Belvèze
+translation-editor:
+- Forename Surname
+translation-reviewer:
+- Forename Surname
+original: slug to original published lesson (translations only)
+review-ticket: e.g. https://github.com/programminghistorian/ph-submissions/issues/108
+difficulty: 2
+activity: analyzing
+topics:
+ - topic one (see guidance below)
+ - topic two
+abstract: |
+   Ce tutoriel explore la manière dont les chercheurs peuvent gérer leurs données pour les ordonner, comprendre les paquets de R utiles à la manipulation de données et conduire sur elles des analyses de base.
+avatar_alt: boîte de savon "wonderful soap"
+doi: 
