@@ -1,0 +1,43 @@
+## Proposition de leçon pour Programming Historian (édition française)
+
+Programming Historian en français recherche des propositions de nouvelles leçons originales ou de traductions.
+
+Nous encourageons nos auteur·es à réfléchir attentivement à la manière dont leur contribution pourrait améliorer notre revue.
+
+Veuillez parcourir [notre revue](/fr/leçons) pour découvrir ce qui a déjà été publié, et réfléchir à ce que vous pourriez ajouter.
+
+Si la méthode ou l'approche sur laquelle vous souhaitez écrire une leçon est déjà représentée dans l'édition [anglaise](/en/lessons), [espagnole](/es/lecciones/), ou [portugaise](/pt/licoes/) de Programming Historian, vous pouvez proposer une traduction en français. Veuillez consulter notre [carte de concordance des traductions](/translation-concordance) pour identifier les leçons à traduire.
+
+Ce formulaire comporte douze questions. Veuillez répondre à toutes celles qui s'appliquent à vous et fournir autant de détails que possible.
+
+---
+
+Nom : Belvèze
+Adresse mail : damien.belveze@univ-rennes.fr
+
+
+1. Quel est le titre de la leçon que vous proposez ?
+
+2. Quel type de leçon proposez-vous ?
+- Une traduction en français d'une leçon originale depuis l'anglais, l'espagnol ou le portugais.
+
+
+[100-300 mots]
+
+7. Si vous proposez une traduction, veuillez nous indiquer si vous envisagez d'adapter ou de localiser l'étude de cas de la leçon originale pour un lectorat francophone. Les meilleures leçons s'appuient sur des jeux de données authentiques ainsi que sur des exemples de code que les lecteurs et lectrices peuvent manipuler.
+
+Comme le traducteur de ce guide en espagnol, j'ai décidé de conserver les jeux de données originaux qui plus est font l'objet d'un package R aisément disponible. 
+
+
+
+11. Lien optionnel vers un exemple de code sur votre dépôt GitHub personnel : 
+
+https://github.com/damienbelveze/Gestion-et-manipulation-des-donnees-avec-R
+
+12. Lien optionnel vers un extrait de la leçon proposée sur votre dépôt GitHub personnel : 
+
+https://damienbelveze.github.io/Gestion-et-manipulation-des-donnees-avec-R/course.html
+
+----
+
+Veuillez envoyer ce formulaire à la rédactrice en chef de Programming Historian en français, [Marie Flesch](mailto:francais@programminghistorian.org).

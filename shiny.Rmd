@@ -1,0 +1,37 @@
+---
+title: "créer une application web interactive avec R et Shiny"
+author: "Yann Ryan"
+translator: "Damien Belvèze"
+date: "2024-08-30"
+output:
+  html_document:
+    toc: true
+    theme: united
+---
+
+Cette leçon montre comment construire une carte web interactive avec R et la bibliothèque SHiny. Dans cette leçon, vous concevrez et implémenterez une application simple consistant en un carroussel qui permet à l'internaute en sélectionnant un intervalle de dates d'afficher un ensemble de points correspondants sur une carte interactive.
+
+
+# Introduction
+
+Cette leçon montre comment construire une carte web interactive en utilisant Shiny. Shiny est une bibliothèque (en anglais, *library*, un ensemble de fonctions) destinée à la programmation avec R. Elle est conçue pour faciliter le développement d'applications web qui permettent aux utilisateurs et utilisatrices d'interagir avec le code dans R en utilisant les éléments d'une interface dans son navigateur, comme des carroussels, des menus déroulants, etc. Dans cette leçon, vous allez concevoir et implémenter une simple application consistant en un carroussel qui permettra aux internautes de sélectionner un intervalle de dates, sélection qui activera du code dans R pour faire s'afficher des points correspondant à ces dates sur une carte interactive. 
+
+# Objectifs de la leçon
+
+A la suite de cette leçon, vous saurez: 
+
+- Créer une application de base avec Shiny    
+- maîtriser la disposition de l'interface de Shiny et sa conception de base
+- la théorie et la pratique de la "programmation réactive" telle qu'implémentée dans les applications faites avec Shiny. Particulièrement, vous apprendrez comment utiliser Shiny pour répondre à certaines actions et comment ces actions en entrée sont connectées à des actions en sortie sur l'application
+
+---
+Notez que cette leçon ne vous apprend pas à coder avec R en dehors de ce qui est nécessaire pour créer une application web, il ne couvre pas non plus la publication sur le web d'une application entièrement réalisée. une connaissance basique de R, notamment l'usage du *tidyverse* vous sera très utile.
+---
+
+# Interfaces graphiques et Humanités numériques
+
+Les interfaces usager graphiques (GUI) et les éléments interactifs peuvent aider à rendre plus accessibles et plus lisibles des travaux scientifiques basés sur des données. A titre d'exemple, les historiens qui travaillent avec des données à large échelle peuvent avoir besoin de montrer comment une variable peut changer à travers le temps. 
+
+
+# Introduction
+
