@@ -280,22 +280,24 @@ Maintenant que nous avons parcouru les cinq principaux verbes de dplyr, nous pou
 ```{r echo=TRUE, include=TRUE}
 secular_colleges_before_1812<-early_colleges%>%
   filter(established < 1812)%>%
-  mutate(is_secular=ifelse(sponsorship!="Secular", "no", "yes"))
+  mutate(`est laïque`=ifelse(sponsorship!="Secular", "non", "oui"))
 
 ggplot(secular_colleges_before_1812) +
-  geom_bar(aes(x=is_secular, fill=is_secular))+
+  geom_bar(aes(x=`est laïque`, fill=`est laïque`))+
   labs(x="est-ce que le college est laïque ?")
 ```
+
+Noter ici que la variable *est laïque* est mise entre *apostrophes arrières* (backtick). Cela permet à la fois de gérer le fait qu'elle occupe au lieu d'un seul deux termes séparés par une espace, ainsi que le i *trema* présent dans le mot "laïque", caractère qui ne fait pas partie des 128 présents dans la table ASCII et peut donc poser problème dans l'exécution de certains programmes.
 
 Encore une fois, en n'apportant qu'une modification rapide à notre code, nous pouvons aussi visualiser le nombre de *colleges* laïques par rapport au nombre de *colleges* religieux fondés depuis le début de la Guerre de 1812 : 
 
 ```{r echo=TRUE, include=TRUE}
 secular_colleges_after_1812<-early_colleges%>%
   filter(established > 1812)%>%
-  mutate(is_secular=ifelse(sponsorship!="Secular", "no", "yes"))
+  mutate(`est laïque`=ifelse(sponsorship!="Secular", "non", "oui"))
 
 ggplot(secular_colleges_after_1812) +
-  geom_bar(aes(x=is_secular, fill=is_secular))+
+  geom_bar(aes(x=`est laïque`, fill=`est laïque`))+
   labs(x="Est-ce que le college est laïque ?")
 ```
 
