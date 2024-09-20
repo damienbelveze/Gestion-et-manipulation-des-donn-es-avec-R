@@ -180,7 +180,7 @@ install.packages("historydata", repos = "http://cran.us.r-project.org")
 library(historydata)
 ```
 
-Ce paquet contient un échantillon de données historiques. Les données de recensement qu'on a utilisées plus tôt font partie de cet échantillon. Jusqu'à la fin de ce tutoriel, on va particulièrement travailler avec le jeu de données early_colleges qui contient des données sur les *Colleges* fondés avant 1848. Commençons par charger les données et y jeter un coup d'oeil : 
+Ce paquet contient un échantillon de données historiques sur les Etats-Unis. Les données de recensement qu'on a utilisées plus tôt font partie de cet échantillon. Jusqu'à la fin de ce tutoriel, on va particulièrement travailler avec le jeu de données early_colleges qui contient des données sur les *universités* (*colleges* en américains) fondées avant 1848. Commençons par charger les données et y jeter un coup d'oeil : 
 
 ```{r echo=TRUE, include=TRUE }
 # Vérifiez avant d'exécuter ce code que le paquet historydata a bien été installé et chargé
@@ -189,9 +189,9 @@ data(early_colleges)
 early_colleges
 ```
 
-Comme vous pouvez l'observer, ce jeu de données contient le nom actuel de chaque *college*, son nom à l'origine, la ville et l'État dans lequel il a été fondé, la date de sa fondation et l'organisation qui le parraine. Comme on l'a vu plus haut, avant de commencer à travailler sur ce jeu de données, il est important de penser à la façon dont on va organiser ces données. Voyons si certaines de nos données ne se trouveraient pas dans un format "impropre". Voyez-vous des cellules qui ne répondraient pas aux trois critères que remplissent les données "propres" ?
+Comme vous pouvez l'observer, ce jeu de données contient le nom actuel de chaque université, son nom à l'origine, la ville et l'État dans lequel il a été fondé, la date de sa fondation et l'organisation qui le parraine. Comme on l'a vu plus haut, avant de commencer à travailler sur ce jeu de données, il est important de penser à la façon dont on va organiser ces données. Voyons si certaines de nos données ne se trouveraient pas dans un format "impropre". Voyez-vous des cellules qui ne répondraient pas aux trois critères que remplissent les données "propres" ?
 
-Si vous avez répondu le parrainage de Harvard, vous avez la bonne réponse. En plus de mentionner le premier parrainage de ce *college*, la cellule comporte l'information de son changement de parrainage en 1805. Habituellement, on veut conserver dans nos données autant d'information que possible, mais pour rester dans la perspective de ce tutoriel, nous allons modifier la colonne pour ne conserver que les parrainages lors de la fondation. 
+Si vous avez répondu le parrainage de Harvard, vous avez la bonne réponse. En plus de mentionner le premier parrainage de cette université, la cellule comporte l'information de son changement de parrainage en 1805. Habituellement, on veut conserver dans nos données autant d'information que possible, mais pour rester dans la perspective de ce tutoriel, nous allons modifier la colonne pour ne conserver que les parrainages lors de la fondation. 
 
 ```{r echo=TRUE, include=TRUE }
 early_colleges[1,6] <- "congregational"
@@ -232,7 +232,7 @@ early_colleges%>%
 ## filter
 
 
-La fonction filter() réalise la même chose que la fonction select() à ceci près qu'au lieu de choisir le nom d'une colonne, on peut utiliser filter() pour filtrer les lignes qui réalisent une certaine condition. Par exemple, on peut visualiser tous les *colleges* qui ont existé avant la fin du 18ème siècle. 
+La fonction filter() réalise la même chose que la fonction select() à ceci près qu'au lieu de choisir le nom d'une colonne, on peut utiliser filter() pour filtrer les lignes qui réalisent une certaine condition. Par exemple, on peut visualiser toutes les universités qui ont existé avant la fin du 18ème siècle. 
 
 
 ```{r echo=TRUE, include=TRUE}
@@ -258,7 +258,7 @@ early_colleges_with_location
 
 ## arrange
 
-La fonction *arrange()* nous permet d'ordonner nos colonnes d'une autre façon. Pour l'instant, les *colleges* sont organisés par année de fondation en ordre croissant. Plaçons les par ordre décroissant. Dans notre cas, à partir de la fin de la Guerre américano-mexicaine :
+La fonction *arrange()* nous permet d'ordonner nos colonnes d'une autre façon. Pour l'instant, les universités sont organisées par année de fondation en ordre croissant. Plaçons les par ordre décroissant. Dans notre cas, à partir de la fin de la Guerre américano-mexicaine :
 
 ```{r echo=TRUE, include=TRUE}
 early_colleges%>%
@@ -275,7 +275,7 @@ early_colleges%>%summarise(mean(established))
 
 ## Et si nous compilions ces fonctions ?
 
-Maintenant que nous avons parcouru les cinq principaux verbes de dplyr, nous pouvons les utiliser pour créer rapidement une visualisation de nos données. Allons-y,  créons un graphique en barres pour afficher le nombre de *colleges* laiques ou religieux fondés avant la guerre de 1812: 
+Maintenant que nous avons parcouru les cinq principaux verbes de dplyr, nous pouvons les utiliser pour créer rapidement une visualisation de nos données. Allons-y,  créons un graphique en barres pour afficher le nombre d'universités laïques ou religieuses fondées avant la guerre de 1812: 
 
 ```{r echo=TRUE, include=TRUE}
 secular_colleges_before_1812<-early_colleges%>%
@@ -284,12 +284,13 @@ secular_colleges_before_1812<-early_colleges%>%
 
 ggplot(secular_colleges_before_1812) +
   geom_bar(aes(x=`est laïque`, fill=`est laïque`))+
-  labs(x="est-ce que le college est laïque ?")
+  labs(x="est-ce que l'université est laïque ?") +
+  ylab("nombre d'établissements")
 ```
 
 Noter ici que la variable *est laïque* est mise entre *apostrophes arrières* (backtick). Cela permet à la fois de gérer le fait qu'elle occupe au lieu d'un seul deux termes séparés par une espace, ainsi que le i *trema* présent dans le mot "laïque", caractère qui ne fait pas partie des 128 présents dans la table ASCII et peut donc poser problème dans l'exécution de certains programmes.
 
-Encore une fois, en n'apportant qu'une modification rapide à notre code, nous pouvons aussi visualiser le nombre de *colleges* laïques par rapport au nombre de *colleges* religieux fondés depuis le début de la Guerre de 1812 : 
+Encore une fois, en n'apportant qu'une modification rapide à notre code, nous pouvons aussi visualiser le nombre de *colleges* laïques par rapport au nombre d'universités religieuses fondées depuis le début de la Guerre de 1812 : 
 
 ```{r echo=TRUE, include=TRUE}
 secular_colleges_after_1812<-early_colleges%>%
@@ -298,7 +299,8 @@ secular_colleges_after_1812<-early_colleges%>%
 
 ggplot(secular_colleges_after_1812) +
   geom_bar(aes(x=`est laïque`, fill=`est laïque`))+
-  labs(x="Est-ce que le college est laïque ?")
+  labs(x="Est-ce que l'université est laïque ?")+
+  ylab("nombre d'établissements")
 ```
 
 # Conclusion
